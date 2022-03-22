@@ -61,7 +61,7 @@ build: prep
 		--file r10k/$(dockerfile) \
 		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)
 	docker pull alpine@sha256:4fb53f12d2ec18199f16d7c305a12c54cda68cc622484bfc3b7346a44d5024ac	
-	docker buildx build --platform linux/arm64 -t rk_image --load
+	docker buildx build --platform linux/arm64 -t rk_image -f ./docker/r10k/Dockerfile .
 ifeq ($(IS_LATEST),true)
 	@docker tag $(NAMESPACE)/r10k:$(VERSION) puppet/r10k:$(LATEST_VERSION)
 endif
