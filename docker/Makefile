@@ -60,11 +60,11 @@ build: prep
 		--build-arg pupperware_analytics_stream=$(PUPPERWARE_ANALYTICS_STREAM) \
 		--file r10k/$(dockerfile) \
 		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)
-	docker pull 4fb53f12d2ec	
+	docker pull alpine@sha256:4fb53f12d2ec18199f16d7c305a12c54cda68cc622484bfc3b7346a44d5024ac	
 	docker buildx build --platform linux/arm64 \
 		${DOCKER_BUILD_FLAGS} \
 		--load \
-		--build-arg alpine_version=$(alpine_version) \
+		--build-arg alpine@sha256:4fb53f12d2ec18199f16d7c305a12c54cda68cc622484bfc3b7346a44d5024ac\
 		--build-arg vcs_ref=$(vcs_ref) \
 		--build-arg build_date=$(build_date) \
 		--build-arg version=$(VERSION) \
