@@ -60,7 +60,7 @@ build: prep
 		--build-arg pupperware_analytics_stream=$(PUPPERWARE_ANALYTICS_STREAM) \
 		--file r10k/$(dockerfile) \
 		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)	
-	docker buildx build --platform linux/arm64,linux/amd64 -t $(NAMESPACE)/r10k_arm:$(VERSION) -f r10k/$(dockerfile) --push $(dockerfile_context) 
+	docker buildx build --platform linux/arm64 -t $(NAMESPACE)/r10k_arm:$(VERSION) -f r10k/$(dockerfile) --push $(dockerfile_context) 
 ifeq ($(IS_LATEST),true)
 	@docker tag $(NAMESPACE)/r10k:$(VERSION) puppet/r10k:$(LATEST_VERSION)
 endif
