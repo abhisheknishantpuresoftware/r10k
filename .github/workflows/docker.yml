@@ -11,15 +11,15 @@ jobs:
       PUPPERWARE_ANALYTICS_STREAM: production
       IS_LATEST: true
       # Still need these env vars for README publishing
-      #DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      #DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+      DOCKERHUB_USERNAME: abhishek138
+      DOCKERHUB_PASSWORD: abhishek138
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@master
-      #- uses: azure/docker-login@v1
-       # with: # This doesn't seem to work unless we point directly to the secrets
+      - uses: azure/docker-login@v1
+        with: This doesn't seem to work unless we point directly to the secrets
         #  username: ${{ secrets.DOCKERHUB_USERNAME }}
          # password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Set up Ruby 2.6
