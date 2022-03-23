@@ -18,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
+      - name: Login do docker.io
+        run: docker login -u abhishek138 -p abhishek138
       #- uses: azure/docker-login@v1
        # with: # This doesn't seem to work unless we point directly to the secrets
         #  username: ${{ secrets.DOCKERHUB_USERNAME }}
