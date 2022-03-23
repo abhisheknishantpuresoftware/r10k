@@ -61,6 +61,7 @@ build: prep
 		--file r10k/$(dockerfile) \
 		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)	
 	docker buildx build \
+	       ${DOCKER_BUILD_FLAGS} \
 	       --load \
 	       --platform linux/arm64 \ 
 	       --file r10k/$(dockerfile) \
