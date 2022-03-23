@@ -59,11 +59,11 @@ build: prep
 		--build-arg version=$(VERSION) \
 		--build-arg pupperware_analytics_stream=$(PUPPERWARE_ANALYTICS_STREAM) \
 		--file r10k/$(dockerfile) \
-		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)
-	docker pull alpine@sha256:4fb53f12d2ec18199f16d7c305a12c54cda68cc622484bfc3b7346a44d5024ac	
+		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)	
 	docker buildx build \
-	       --platform linux/arm64 
-	       --file r10k/$(dockerfile)
+	       --load \
+	       --platform linux/arm64 \ 
+	       --file r10k/$(dockerfile) \
 	       --tag $(NAMESPACE)/r10k_arm:$(VERSION) $(dockerfile_context)
 ifeq ($(IS_LATEST),true)
 	@docker tag $(NAMESPACE)/r10k:$(VERSION) puppet/r10k:$(LATEST_VERSION)
