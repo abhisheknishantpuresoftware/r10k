@@ -61,7 +61,7 @@ build: prep
 		--file r10k/$(dockerfile) \
 		--tag $(NAMESPACE)/r10k:$(VERSION) $(dockerfile_context)
 		
-	docker buildx build --platform linux/arm64 -t $(NAMESPACE)/r10k_arm:$(VERSION) -f r10k/$(dockerfile) --load
+	docker buildx build --platform linux/arm64 -t $(NAMESPACE)/r10k_arm:$(VERSION) -f r10k/$(dockerfile) --load $(dockerfile_context)
 		#--push $(dockerfile_context) 
 		#--build-arg alpine_version=$(alpine_version) \
 		#--build-arg vcs_ref=$(vcs_ref) \
