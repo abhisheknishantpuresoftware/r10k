@@ -65,4 +65,4 @@ RUN chmod a+x /adduser.sh /docker-entrypoint.sh /docker-entrypoint.d/*.sh && \
 USER puppet
 WORKDIR /home/puppet
 
-COPY docker/r10k/Dockerfile /
+#COPY docker/r10k/Dockerfile /
