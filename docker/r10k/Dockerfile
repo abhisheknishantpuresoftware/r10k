@@ -32,8 +32,8 @@ LABEL org.label-schema.maintainer="Puppet Release Team <release@puppet.com>" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.dockerfile="/Dockerfile"
 
-COPY r10k/adduser.sh docker/r10k/docker-entrypoint.sh /
-COPY r10k/docker-entrypoint.d /docker-entrypoint.d
+COPY docker/r10k/adduser.sh docker/r10k/docker-entrypoint.sh /
+COPY docker/r10k/docker-entrypoint.d /docker-entrypoint.d
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["help"]
@@ -65,4 +65,4 @@ RUN chmod a+x /adduser.sh /docker-entrypoint.sh /docker-entrypoint.d/*.sh && \
 USER puppet
 WORKDIR /home/puppet
 
-COPY r10k/Dockerfile /
+COPY docker/r10k/Dockerfile /
