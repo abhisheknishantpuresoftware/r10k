@@ -32,8 +32,8 @@ LABEL org.label-schema.maintainer="Puppet Release Team <release@puppet.com>" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.dockerfile="/Dockerfile"
 
-COPY docker/r10k/adduser.sh docker/r10k/docker-entrypoint.sh /
-COPY docker/r10k/docker-entrypoint.d /docker-entrypoint.d
+#COPY docker/r10k/adduser.sh docker/r10k/docker-entrypoint.sh /
+#COPY docker/r10k/docker-entrypoint.d /docker-entrypoint.d
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["help"]
