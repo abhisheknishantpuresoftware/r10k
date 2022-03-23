@@ -65,8 +65,8 @@ build: prep
 		--load \
 		--platform linux/arm64 \
 		-t $(NAMESPACE)/r10k_arm:$(VERSION) \
-		-f r10k/$(dockerfile) \
-		--push $(dockerfile_context) 
+		-f r10k/$(dockerfile) 
+		#--push $(dockerfile_context) 
 		#--build-arg alpine_version=$(alpine_version) \
 		#--build-arg vcs_ref=$(vcs_ref) \
 		#--build-arg build_date=$(build_date) \
