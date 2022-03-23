@@ -1,5 +1,5 @@
 PUPPERWARE_ANALYTICS_STREAM ?= dev
-NAMESPACE ?= puppet
+NAMESPACE ?= abhishek138
 git_describe = $(shell git describe --tags)
 vcs_ref := $(shell git rev-parse HEAD)
 build_date := $(shell date -u +%FT%T)
