@@ -52,6 +52,7 @@ jobs:
           else
             echo "Skipping release container building and testing"
           fi
+          docker images  
       - name: Publish release container
         env:
           IS_RELEASE: true
